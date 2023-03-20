@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+                  "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+<bean id="triangle" class="com.pankz.Triangle">
+
+<property name="type" value="Equilateral"> <!-- preset value for type member variable -->
+
+
+</property>
+</bean>
+
+
+</beans>
+
+
+
+
+
+<!--  THIS FILE IS THE BLUEPRINTS FOR THE OBJECT THAT WE ARE GOING TO CREATE.
+Explanation of property tag->When we ask spring to get us the triangle object it just scans id and then class and then property..
+and then it fill that "value" to the property "name" here "type" and then return us an object that has a value set for that property.
+
+
+
+
+
+
+
+-->
