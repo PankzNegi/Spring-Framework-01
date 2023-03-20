@@ -1,0 +1,23 @@
+In Spring Framework we have IoC container (Inversion of Control) which receives metadata from either an XML file, Java annotations, or Java code 
+and works accordingly. 
+IoC adds the flexibility and control of application, and provides a central place of configuration management for Plain Old Java Objects (POJO) of our application.
+
+
+
+
+
+What is Bean Factory????
+It is an interface defined in org.springframework.beans.factory.BeanFactory.
+Bean Factory provides the basic support for Dependency Injection.
+It is based on factory design pattern which creates the beans of any type.
+BeanFactory follows lazy-initialization technique which means beans are loaded as soon as bean factory instance is created but the beans are created only when getBean() method is called.
+The XmlBeanFactory is the implementation class for the BeanFactory interface. To use the BeanFactory, you need to create the instance of XmlBeanFactory class as shown below:
+BeanFactory beanFactory = new XmlBeanFactory(new ClassPathResource("beans.xml"));
+
+
+
+When to use BeanFactory???
+
+The BeanFactory is usually preferred where the resources are limited like mobile devices or applet based applications.
+ So use an ApplicationContext unless you have a good reason for not doing so.
+
