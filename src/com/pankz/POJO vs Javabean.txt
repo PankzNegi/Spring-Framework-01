@@ -1,0 +1,70 @@
+POJO: If the class can be executed with underlying JDK,without any other external third party libraries support then its called POJO
+
+JavaBean: If class only contains attributes with accessors(setters and getters) those are called javabeans.
+Java beans generally "will not contain any bussiness logic" rather those are used for holding some data in it.
+
+All Javabeans are POJOs but all POJO are not Javabeans.
+
+
+
+
+
+
+
+
+11
+
+
+Pojo - Plain old java object
+
+pojo class is an ordinary class without any specialties,class totally loosely coupled from technology/framework.the class does not implements from technology/framework and does not extends from technology/framework api that class is called pojo class.
+
+pojo class can implements interfaces and extend classes but the super class or interface should not be an technology/framework.
+
+Examples :
+
+1.
+
+class ABC{
+----
+}
+ABC class not implementing or extending from technology/framework that's why this is pojo class.
+
+2.
+
+class ABC extends HttpServlet{
+---
+}
+ABC class extending from servlet technology api that's why this is not a pojo class.
+
+3.
+
+class ABC implements java.rmi.Remote{
+----
+}
+ABC class implements from rmi api that's why this is not a pojo class.
+
+4.
+
+class ABC implements java.io.Serializable{
+---
+}
+this interface is part of java language not a part of technology/framework.so this is pojo class.
+
+5.
+
+class ABC extends Thread{
+--
+}
+here thread is also class of java language so this is also a pojo class.
+
+6.
+
+class ABC extends Test{
+--
+}
+if Test class extends or implements from technologies/framework then ABC is also not a pojo class because it inherits the properties of Test class. if Test class is not a pojo class then ABC class also not a pojo class.
+
+
+
+
