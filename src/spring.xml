@@ -4,10 +4,12 @@
 <beans>
 <bean id="triangle" class="com.pankz.Triangle">
 
-<property name="type" value="Equilateral"> <!-- preset value for type member variable -->
+<constructor-arg value="Equilateral"/>
+<constructor-arg value='12'/>
 
 
-</property>
+
+
 </bean>
 
 
