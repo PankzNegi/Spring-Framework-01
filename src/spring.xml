@@ -4,8 +4,24 @@
 <beans>
 <bean id="triangle" class="com.pankz.Triangle">
 <property name="pointA" ref="zeroPoint"/>
-<property name="pointB" ref="point2"/>
-<property name="pointC" ref="point3"/>
+<property name="pointB">
+<bean  class="com.pankz.Point">
+<property name="x" value="-21"/>
+<property name="y" value="0"/>
+
+</bean>
+
+</property>
+<property name="pointC">
+<bean  class="com.pankz.Point">
+<property name="x" value="32"/>
+<property name="y" value="0"/>
+
+</bean>
+
+
+
+ </property>
 <!--  
 <constructor-arg value="Equilateral"/>
 <constructor-arg value='12'/>-->
@@ -15,18 +31,12 @@
 <property name="y" value="0"/>
 
 </bean>
-<bean id="point2" class="com.pankz.Point">
-<property name="x" value="-21"/>
-<property name="y" value="0"/>
-
-</bean>
-<bean id="point3" class="com.pankz.Point">
-<property name="x" value="32"/>
-<property name="y" value="0"/>
-
-</bean>
 
 
+
+
+
+<alias name="triangle" alias="triangle-alias"/>
 </beans>
 
 
@@ -47,6 +57,10 @@ Therefore use type=int in constructor tag. In case of string type="java.lang.Str
 OR via indexes
 index=0 value="something for first index=1 value="something" for second
 it fills first arguments and then second arguments
+
+InnerBean:
+
+point b and point c implements inner bean these two points are specific for the triangles.
 
 
 
