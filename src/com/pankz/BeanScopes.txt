@@ -1,0 +1,30 @@
+Basic Bean Scope---->
+1-SINGLETON BEAN SCOPE-->Only one instance per Spring container
+Once we have initialised the Application Context(Spring container)and then after giving it the .xml its going to look all the beans in xml
+and it initialize one bean per bean defination.
+For e.g Triangle class has one getBean("triangle") if their is another class that was doing getBean("triangle")  
+Now it would have got the same object.Spring will not create a new object ,it would have got the same instances of triangle.
+
+ByDeafult the scope is Singleton.(only one instance per spring container)
+
+
+
+
+
+2-PROTOTYPE BEAN SCOPE-New Bean cretaed with every request or reference.
+If in our example the scope is set as Prototype and if another class made a call to the getBean("triangle")then Spring container would 
+create a new bean and then pass to that class.
+Note:not only getBeans("triangle") call create a new bean again alsohave a zeroPoint defined as prototype bean and if zeroPoint
+referenced in anotherbeaneach of thosebeans have different instances of zeroPoint object
+
+
+In a nutshell if the scope is singleton then it initialise beans during initialization or loadtime while creating application
+context it doesn't wait for getBean()
+However if the scope of bean is prototype then  spring waits for getBeans() to happen then it initialize.
+For every getBeans() it has to do the initialization
+
+
+3-Web-aware context bean scope-
+Request- new bean per servlet request
+Session-new bean per session
+global session-new bean per global HTTP session
