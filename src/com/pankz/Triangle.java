@@ -1,10 +1,30 @@
 package com.pankz;
 
+import java.util.List;
+
 public class Triangle {
-	private Point pointA;
+/*	private Point pointA;
 	private Point pointB;
 	private Point pointC;
 	
+	*/
+	private List<Point> points;
+	
+
+
+	public List<Point> getPoints() {
+		return points;
+	}
+
+
+
+	public void setPoints(List<Point> points) {
+		this.points = points;
+	}
+
+
+
+	/*
 public Point getPointA() {
 		return pointA;
 	}
@@ -68,12 +88,17 @@ public Point getPointA() {
 */
 	public void draw()
 	{
+		for(Point point:points)
+		{
+			System.out.println("Point =("+point.getX()+","+point.getY()+")");
+		
+		}
 		
 		
 		//System.out.println(getType()+" Triangle drawn of height "+getHeight());
-		System.out.println("PointA=("+getPointA().getX() +" ," +getPointA().getY()+")" );
+	/*	System.out.println("PointA=("+getPointA().getX() +" ," +getPointA().getY()+")" );
 		System.out.println("PointB=("+getPointB().getX() +" ," +getPointB().getY()+")" );
-		System.out.println("PointC=("+getPointC().getX() +" ," +getPointC().getY()+")" );
+		System.out.println("PointC=("+getPointC().getX() +" ," +getPointC().getY()+")" ); */
 	}
 
 }
