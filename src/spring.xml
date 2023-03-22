@@ -59,5 +59,18 @@ point b and point c implements inner bean these two points are specific for the 
 idref- extra vaildation with idref,makesure that their is bean with that specific id in spring.xml,if not it throws an exception.
 
 
+"autowire"- intelligently guessing what the reference is...
+If the name i.e id of beans is same as the name of member variables (pointA,pointB..) then instead of any property and ref in the bean tag
+We can ask spring to autowire beans based on name.(autowire="byName")It checks for all the member variables and check if their is any bean
+with this name defined in .xml then it automatically reference that bean to this member variable
+
+There is another way to "autowire by byType" when we have only one bean of each type (only one bean of point)and one member variable (if pointA only)
+In this case it looks for type (the class for which it is defined).
+if we have three point object then we can't do this type of autowiring.
+
+"autowiring by constructor"-constructor injection instead of setter injection..injecting value through constructor
+Here also one condition -one bean per type...
+
+
 
 -->
