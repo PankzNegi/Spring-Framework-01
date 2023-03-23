@@ -19,12 +19,13 @@ public class DrawingApp {
 		context.registerShutdownHook();
 		
 		
+		
 		//In this we need not to pass filesystem resource as parameter
 		//XmlBeanFactory reads an XML file.It takes an args which is the resource where file is stored
 		//Bean factory is an interfaces
 		//there are different BeanFactory implementation ,here we re using XmlBeanFactory(class).
 		//BeanFactory reads the blueprints of the beans from the configuration file(spring.xml)
-	 Triangle triangle=(Triangle)context.getBean("triangle1"); //getting bean i.e obj "triangle"/ instantiating object here
+	 Triangle triangle=(Triangle)context.getBean("triangle2"); //getting bean i.e obj "triangle"/ instantiating object here
 	 //BeanFactory goes to xml file & it looks for "triangle" bean.
 	 triangle.draw();
 

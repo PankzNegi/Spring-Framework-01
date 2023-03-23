@@ -16,20 +16,7 @@ public class Triangle implements ApplicationContextAware  {
 	private ApplicationContext context=null;
 	
 	
-	
-	
-	
 
-
-	public List<Point> getPoints() {
-		return points;
-	}
-
-
-
-	public void setPoints(List<Point> points) {
-		this.points = points;
-	}
 /*
 
 
@@ -57,6 +44,20 @@ public Point getPointA() {
 	public void setPointC(Point pointC) {
 		this.pointC = pointC;
 	}*/
+
+	public List<Point> getPoints() {
+		return points;
+	}
+
+
+
+
+	public void setPoints(List<Point> points) {
+		this.points = points;
+	}
+
+
+
 
 	/*	private String type;
 	private int height;
