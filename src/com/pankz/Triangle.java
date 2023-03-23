@@ -1,17 +1,20 @@
 package com.pankz;
 
 import java.util.List;
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+import org.springframework.beans.factory.InitializingBean;
 
-import org.springframework.beans.factory.BeanNameAware;
-
-public class Triangle implements   BeanNameAware {
+public class Triangle implements ApplicationContextAware,InitializingBean  {
 	/*private Point pointA;
 	private Point pointB;
 	private Point pointC;*/
 	
 	
+	
 	private List<Point> points;
-//	private ApplicationContext context;
+	private ApplicationContext context=null;
 	
 	
 	
@@ -28,10 +31,10 @@ public class Triangle implements   BeanNameAware {
 	public void setPoints(List<Point> points) {
 		this.points = points;
 	}
-
-
 /*
-	
+
+
+
 public Point getPointA() {
 		return pointA;
 	}
@@ -54,8 +57,8 @@ public Point getPointA() {
 
 	public void setPointC(Point pointC) {
 		this.pointC = pointC;
-	}
-*/
+	}*/
+
 	/*	private String type;
 	private int height;
 	
@@ -101,6 +104,8 @@ public Point getPointA() {
 		
 		}
 	}
+	
+	
 		
 		
 		//System.out.println(getType()+" Triangle drawn of height "+getHeight());
@@ -108,20 +113,20 @@ public Point getPointA() {
 		System.out.println("PointB=("+getPointB().getX() +" ," +getPointB().getY()+")" );
 		System.out.println("PointC=("+getPointC().getX() +" ," +getPointC().getY()+")" ); 
 	}*/
-	/*@Override
-public void setApplicationContext(ApplicationContext context) throws BeansException {
+	@Override
+	public void setApplicationContext(ApplicationContext context) throws BeansException {
 		this.context=context;
-		Triangle triangle=(Triangle)context.getBean("triangle-alias");
+		Triangle triangle=(Triangle)context.getBean("triangle1");
 		System.out.println(triangle.toString());
 		
-		}*/
-
+		}
 
 	@Override
-	public void setBeanName(String beanName) {
-		System.out.println("Bean name as " +beanName);
-		
-		
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("InitialisingBean init method called for triangle");
 	}
+
+
+	
 
 }

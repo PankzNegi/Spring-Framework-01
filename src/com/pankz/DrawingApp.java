@@ -1,11 +1,13 @@
 package com.pankz;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class DrawingApp {
 
 	
+
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 	//	Triangle triangle=new Triangle();
@@ -13,7 +15,10 @@ public class DrawingApp {
 		//BeanFactory factory=new XmlBeanFactory(new FileSystemResource("spring.xml"));
 		//Using Application Context
 		
-		ApplicationContext context =new ClassPathXmlApplicationContext("spring.xml");
+		AbstractApplicationContext context =new ClassPathXmlApplicationContext("spring.xml");
+		context.registerShutdownHook();
+		
+		
 		//In this we need not to pass filesystem resource as parameter
 		//XmlBeanFactory reads an XML file.It takes an args which is the resource where file is stored
 		//Bean factory is an interfaces
