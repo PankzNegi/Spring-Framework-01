@@ -107,18 +107,18 @@ public Point getPointA() {
 		System.out.println("PointB=("+getPointB().getX() +" ," +getPointB().getY()+")" );
 		System.out.println("PointC=("+getPointC().getX() +" ," +getPointC().getY()+")" ); 
 	}
-
 	@Override
 	public void setApplicationContext(ApplicationContext context) throws BeansException {
 		this.context=context;
-		System.out.println(context);
+		/* Triangle triangle=(Triangle)context.getBean("triangle-alias");
+		System.out.println(triangle.toString());*/
 		
 		
 	}
 
 	@Override
 	public void setBeanName(String beanName) {
-		System.out.println("Bean name as" +beanName);
+		System.out.println("Bean name as " +beanName);
 		
 		
 	}
