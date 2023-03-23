@@ -2,20 +2,20 @@ package com.pankz;
 
 import java.util.List;
 
-import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanNameAware;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
 
-public class Triangle implements ApplicationContextAware , BeanNameAware {
-	private Point pointA;
+public class Triangle implements   BeanNameAware {
+	/*private Point pointA;
 	private Point pointB;
-	private Point pointC;
-	
-	private ApplicationContext context=null;
+	private Point pointC;*/
 	
 	
-/*	private List<Point> points;
+	private List<Point> points;
+//	private ApplicationContext context;
+	
+	
+	
+	
 	
 
 
@@ -27,10 +27,10 @@ public class Triangle implements ApplicationContextAware , BeanNameAware {
 
 	public void setPoints(List<Point> points) {
 		this.points = points;
-	}*/
+	}
 
 
-
+/*
 	
 public Point getPointA() {
 		return pointA;
@@ -55,7 +55,7 @@ public Point getPointA() {
 	public void setPointC(Point pointC) {
 		this.pointC = pointC;
 	}
-
+*/
 	/*	private String type;
 	private int height;
 	
@@ -95,26 +95,27 @@ public Point getPointA() {
 */
 	public void draw()
 	{
-		/*for(Point point:points)
+		for(Point point:points)
 		{
 			System.out.println("Point =("+point.getX()+","+point.getY()+")");
 		
-		}*/
+		}
+	}
 		
 		
 		//System.out.println(getType()+" Triangle drawn of height "+getHeight());
-		System.out.println("PointA=("+getPointA().getX() +" ," +getPointA().getY()+")" );
+	/*	System.out.println("PointA=("+getPointA().getX() +" ," +getPointA().getY()+")" );
 		System.out.println("PointB=("+getPointB().getX() +" ," +getPointB().getY()+")" );
 		System.out.println("PointC=("+getPointC().getX() +" ," +getPointC().getY()+")" ); 
-	}
-	@Override
-	public void setApplicationContext(ApplicationContext context) throws BeansException {
+	}*/
+	/*@Override
+public void setApplicationContext(ApplicationContext context) throws BeansException {
 		this.context=context;
-		/* Triangle triangle=(Triangle)context.getBean("triangle-alias");
-		System.out.println(triangle.toString());*/
+		Triangle triangle=(Triangle)context.getBean("triangle-alias");
+		System.out.println(triangle.toString());
 		
-		
-	}
+		}*/
+
 
 	@Override
 	public void setBeanName(String beanName) {

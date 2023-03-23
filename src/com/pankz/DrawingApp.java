@@ -1,27 +1,25 @@
 package com.pankz;
 
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.core.io.FileSystemResource;
 
-@SuppressWarnings("deprecation")
 public class DrawingApp {
 
 	
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 	//	Triangle triangle=new Triangle();
 		//triangle.draw();
 		//BeanFactory factory=new XmlBeanFactory(new FileSystemResource("spring.xml"));
 		//Using Application Context
-		ApplicationContext context=new ClassPathXmlApplicationContext("spring.xml");
+		
+		ApplicationContext context =new ClassPathXmlApplicationContext("spring.xml");
 		//In this we need not to pass filesystem resource as parameter
 		//XmlBeanFactory reads an XML file.It takes an args which is the resource where file is stored
 		//Bean factory is an interfaces
 		//there are different BeanFactory implementation ,here we re using XmlBeanFactory(class).
 		//BeanFactory reads the blueprints of the beans from the configuration file(spring.xml)
-	 Triangle triangle=(Triangle)context.getBean("triangle2"); //getting bean i.e obj "triangle"/ instantiating object here
+	 Triangle triangle=(Triangle)context.getBean("triangle1"); //getting bean i.e obj "triangle"/ instantiating object here
 	 //BeanFactory goes to xml file & it looks for "triangle" bean.
 	 triangle.draw();
 
