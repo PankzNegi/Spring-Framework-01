@@ -1,0 +1,33 @@
+
+A simple example in which we want to use a application conext getBeans() in bean instead of directly wiring them up in the spring.xml
+
+
+
+
+Using ApplicationContextAware we can get member variables using getBeans() instead of using .xml file...
+It gives the information about container to bean..just by implementing the interface and have to have a setter method
+Spring will automatically pass the info in the setter method
+
+
+
+
+2-BeanNameAware-->If we want to know the name of bean that has been configured in xml file("triangle")
+
+
+	@Override
+	public void setBeanName(String beanName) {
+		System.out.println("Bean name as" +beanName);
+		This call to the setBean happens before the code executes
+		While initialising the bean itself spring is going to automatically call the setter depending on the interfaces(aware) interface
+		which we implemented..
+		
+		
+		Explanation--->It provides the reference to the application context to bean so that that bean can create other bean.
+		
+			@Override
+	public void setApplicationContext(ApplicationContext context) throws BeansException {
+		this.context=context;
+		System.out.println(context);
+		Through this method we are setting the value for application context
+		During runtime "Triangle" bean will have the reference of application context.
+		Now in Triangle class we can directly create other bean
