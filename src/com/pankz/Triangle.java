@@ -4,9 +4,8 @@ import java.util.List;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
-import org.springframework.beans.factory.InitializingBean;
 
-public class Triangle implements ApplicationContextAware,InitializingBean  {
+public class Triangle implements ApplicationContextAware  {
 	/*private Point pointA;
 	private Point pointB;
 	private Point pointC;*/
@@ -121,12 +120,27 @@ public Point getPointA() {
 		
 		}
 
-	@Override
+/*	@Override
 	public void afterPropertiesSet() throws Exception {
 		System.out.println("InitialisingBean init method called for triangle");
 	}
 
 
+
+	@Override
+	public void destroy() throws Exception {
+		System.out.println("Disposable bean destroy method called for triangle");
+		
+	}*/
+public void myInit()   //Lifecycle methods not bound to spring customized method configured in .xml
+{
+	System.out.println("InitialisingBean init method called for triangle");
+}
+
+public void cleanUp() {
+	System.out.println("Disposable bean destroy method called for triangle");
+	
+}
 	
 
 }
