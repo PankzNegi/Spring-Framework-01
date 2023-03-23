@@ -2,29 +2,33 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
                   "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 <beans>
-<bean id="parenttriangle" class="com.pankz.Triangle">
-<property name="points" >
+<bean id="parenttriangle" class="com.pankz.Triangle" abstract="true" init-method="myInit" destroy-method="cleanUp" >
+<property name="points">
 <list>
 <ref bean="pointA"/>
 </list>
 </property>
-
-
-
 </bean>
+
+
+
 <bean id="triangle1" class="com.pankz.Triangle" parent="parenttriangle">
-<!--  
-<property name="pointB" ref="pointB"/>
-<property name="pointC" ref="pointC"/> -->
-<property name="points" >
+<property name="points">
 <list merge="true">
-<ref bean="pointB"/>   <!-- Here in this case pointB overrides pointA and will show only pointB in output despite
-of inheritence coz we are defining the element for the same member variable i.e "points" so we have to merge both of them 
-"merge" will merge the elements defined in child bean to elements defined in parent bean-->
+<ref bean="pointB"/>
 </list>
 </property>
-
 </bean>
+ 
+
+
+   <!-- Here in this case pointB overrides pointA and will show only pointB in output despite
+of inheritence coz we are defining the element for the same member variable i.e "points" so we have to merge both of them 
+"merge" will merge the elements defined in child bean to elements defined in parent bean-->
+
+
+
+
 <bean id="triangle2" class="com.pankz.Triangle" parent="parenttriangle">
 
 <property name="pointB" ref="pointB"/>
@@ -56,7 +60,7 @@ of inheritence coz we are defining the element for the same member variable i.e 
 
 
 
-<alias name="triangle" alias="triangle-alias"/>
+
 </beans>
 
 
