@@ -74,6 +74,11 @@ of inheritence coz we are defining the element for the same member variable i.e 
 
 
 </bean>
+<bean id="circle" class="com.pankz.Circle">
+<property name="center" ref="zeroPoint"/>
+
+
+</bean>
 
 
 
