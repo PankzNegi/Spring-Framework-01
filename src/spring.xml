@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
-                  "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
-<beans default-init-method="myInit" default-destroy-method="cleanUp">
+
+<beans default-init-method="myInit" default-destroy-method="cleanUp" xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:context="http://www.springframework.org/schema/context" xmlns:util="http://www.springframework.org/schema/util"
+xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
 <bean id="parenttriangle" class="com.pankz.Triangle" abstract="true"  >
 <property name="points">
 <list>
@@ -54,11 +60,12 @@ of inheritence coz we are defining the element for the same member variable i.e 
 <constructor-arg value='12'/>-->
 
 <bean id="zeroPoint" class="com.pankz.Point">
+<qualifier value="circleRelated" />
 <property name="x" value="${zeroPoint.pointX}"/>
 <property name="y" value="${zeroPoint.pointY}"/>
 
 </bean>
-<!--  
+ 
 <bean id="point1" class="com.pankz.Point">
 <property name="x" value="-21"/>
 <property name="y" value="0"/>
@@ -68,7 +75,7 @@ of inheritence coz we are defining the element for the same member variable i.e 
 <property name="x" value="32"/>
 <property name="y" value="0"/>
 
-</bean> -->
+</bean> 
 <!-- 
 <bean class ="com.pankz.DisplayNameBeanPostProcessor"/>  
 
@@ -81,6 +88,7 @@ of inheritence coz we are defining the element for the same member variable i.e 
 <bean id="circle" class="com.pankz.Circle">
 </bean>
 <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+
 
 <!-- 
 <property name="center" ref="zeroPoint"/>  -->
