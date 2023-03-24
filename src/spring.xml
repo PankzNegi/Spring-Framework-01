@@ -65,7 +65,10 @@ of inheritence coz we are defining the element for the same member variable i.e 
 <property name="y" value="0"/>
 
 </bean>
-<bean class ="com.pankz.DisplayNameBeanPostProcessor"/>
+<!-- 
+<bean class ="com.pankz.DisplayNameBeanPostProcessor"/>   -->
+
+<bean class="com.pankz.MyBeanFactoryPP"/>
 
 
 
