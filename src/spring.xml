@@ -51,8 +51,8 @@ of inheritence coz we are defining the element for the same member variable i.e 
 <constructor-arg value='12'/>-->
 
 <bean id="zeroPoint" class="com.pankz.Point">
-<property name="x" value="0"/>
-<property name="y" value="0"/>
+<property name="x" value="${zeroPoint.pointX}"/>
+<property name="y" value="${zeroPoint.pointY}"/>
 
 </bean>
 <bean id="point1" class="com.pankz.Point">
@@ -66,9 +66,14 @@ of inheritence coz we are defining the element for the same member variable i.e 
 
 </bean>
 <!-- 
-<bean class ="com.pankz.DisplayNameBeanPostProcessor"/>   -->
+<bean class ="com.pankz.DisplayNameBeanPostProcessor"/>  
 
-<bean class="com.pankz.MyBeanFactoryPP"/>
+<bean class="com.pankz.MyBeanFactoryPP"/>  -->
+<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+<property name="location" value="pointsconfig.properties"/>
+
+
+</bean>
 
 
 
