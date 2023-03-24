@@ -25,9 +25,15 @@ public class DrawingApp {
 		//Bean factory is an interfaces
 		//there are different BeanFactory implementation ,here we re using XmlBeanFactory(class).
 		//BeanFactory reads the blueprints of the beans from the configuration file(spring.xml)
-	 Triangle triangle=(Triangle)context.getBean("triangle2"); //getting bean i.e obj "triangle"/ instantiating object here
+	// Triangle triangle=(Triangle)context.getBean("triangle1"); //getting bean i.e obj "triangle"/ instantiating object here
+		// triangle.draw();
 	 //BeanFactory goes to xml file & it looks for "triangle" bean.
-	 triangle.draw();
+	// Circle circle=(Circle)context.getBean("circle");
+		// circle.draw();
+		Shape shape=(Shape)context.getBean("circle");  //coding to interface "Shape"
+		shape.draw();
+	
+	
 
 	}
 
