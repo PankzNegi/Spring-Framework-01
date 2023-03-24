@@ -1,18 +1,14 @@
 package com.pankz;
 
-import org.springframework.beans.factory.annotation.Required;
+import org.springframework.beans.factory.annotation.Autowired;
 
-@SuppressWarnings("deprecation")
 public class Circle implements Shape {
 	private Point center;
 
 	public Point getCenter() {
 		return center;
 	}
-	@SuppressWarnings("deprecation")
- //	This is helpful to make sure that all the required dependencies are met or not(catch all these error during wiring much before code execution)
-	//Here BeanPostProcessor checks for annotation @required helping in configuration all these dependency wiring.
-	@Required
+	@Autowired
 	public void setCenter(Point center) {
 		this.center = center;
 	}

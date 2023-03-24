@@ -10,7 +10,7 @@
 </property>
 </bean>
 
-
+<!--  
 
 <bean id="triangle1" class="com.pankz.Triangle" parent="parenttriangle">
 <property name="points">
@@ -22,12 +22,14 @@
 </list>
 </property>
 </bean>
+-->
  
 
 
    <!-- Here in this case pointB overrides pointA and will show only pointB in output despite
 of inheritence coz we are defining the element for the same member variable i.e "points" so we have to merge both of them 
 "merge" will merge the elements defined in child bean to elements defined in parent bean-->
+<!--  
 <bean id="triangle2" class="com.pankz.Triangle" parent="parenttriangle">
 <property name="points">
 <list merge="true">
@@ -39,6 +41,7 @@ of inheritence coz we are defining the element for the same member variable i.e 
 </list>
 </property>
 </bean>
+  -->
 
 
 
@@ -55,6 +58,7 @@ of inheritence coz we are defining the element for the same member variable i.e 
 <property name="y" value="${zeroPoint.pointY}"/>
 
 </bean>
+<!--  
 <bean id="point1" class="com.pankz.Point">
 <property name="x" value="-21"/>
 <property name="y" value="0"/>
@@ -64,7 +68,7 @@ of inheritence coz we are defining the element for the same member variable i.e 
 <property name="x" value="32"/>
 <property name="y" value="0"/>
 
-</bean>
+</bean> -->
 <!-- 
 <bean class ="com.pankz.DisplayNameBeanPostProcessor"/>  
 
@@ -75,20 +79,28 @@ of inheritence coz we are defining the element for the same member variable i.e 
 
 </bean>
 <bean id="circle" class="com.pankz.Circle">
+</bean>
+<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+
+<!-- 
+<property name="center" ref="zeroPoint"/>  -->
 <!-- If we are not declaring its dependency in property tag i.e not giving any reference
 In that case we must use Required annotation, this exception caught much before execution due to bean Post processor @required annotation 
 As here we don't have any dependency of circlr but Circle is using  center in draw method i.e shape.draw()
 Error occur in bean initialisation phase(caught in bean init phase) that center is required for circle
 -->
 
-<!-- 
+ 
 
 
-<property name="center" ref="zeroPoint"/>
- -->
+
+ 
+ <!--  
+ <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>-->
+ <!-- Above bean defination throws an exception before exceution of code-->
 
 
-</bean>
+
 
 
 
