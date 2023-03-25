@@ -1,7 +1,14 @@
 package com.pankz;
 
+import javax.annotation.Resource;
+import javax.annotation.Resources;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.ImportResource;
+
+
+
 
 public class Circle implements Shape {
 	private Point center;
@@ -9,9 +16,13 @@ public class Circle implements Shape {
 	public Point getCenter() {
 		return center;
 	}
-	@Autowired
-	@Qualifier("circleRelated")
-	public void setCenter(Point center) {
+	
+/*	@Autowired
+	@Qualifier("circleRelated")*/
+	
+	@Resource(name="point1")
+
+	public void setCenter( Point center) {
 		this.center = center;
 	}
 
