@@ -1,5 +1,7 @@
 package com.pankz;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
 import javax.annotation.Resources;
 
@@ -32,5 +34,16 @@ public class Circle implements Shape {
 		
 		System.out.println("Circle's Point is (" +center.getX() +"," +center.getY()+")");
 	}
+	@PostConstruct
+	public void initializeCircle()
+	{
+		System.out.println("Init of Circle");
+	}
+	@PreDestroy
+	public void destroyCircle()
+	{
+		System.out.println("Destroy of Circle");
+	}
+
 
 }
