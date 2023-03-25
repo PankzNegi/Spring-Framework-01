@@ -34,7 +34,7 @@ public class DrawingApp {
 		//Here DrawingApp doesn't know whether it is drawing triangle or a circle due to coding to interface.
 		//Can add rectangle classes if needed
 		shape.draw();
-		System.out.println(context.getMessage("greetings",null,"Default Greeting",null));
+		//System.out.println(context.getMessage("greetings",null,"Default Greeting",null));
 	
 	
 
