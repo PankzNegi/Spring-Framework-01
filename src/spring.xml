@@ -8,13 +8,15 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd
 http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
+ 
 <bean id="parenttriangle" class="com.pankz.Triangle" abstract="true"  >
+
 <property name="points">
 <list>
 <ref bean="zeroPoint"/>
 </list>
 </property>
-</bean>
+</bean>  
 
 <!--  
 
@@ -67,6 +69,7 @@ of inheritence coz we are defining the element for the same member variable i.e 
 </bean>
  
 <bean id="point1" class="com.pankz.Point">
+
 <property name="x" value="-21"/>
 <property name="y" value="0"/>
 
@@ -85,9 +88,21 @@ of inheritence coz we are defining the element for the same member variable i.e 
 
 
 </bean>
+<!-- 
 <bean id="circle" class="com.pankz.Circle">
-</bean>
-<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+</bean>  -->
+<!-- 
+
+<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>   -->
+
+  <context:annotation-config/> 
+  <context:component-scan base-package="com.pankz"/>
+  
+  
+
+
+
+
 
 
 <!-- 

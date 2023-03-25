@@ -3,15 +3,14 @@ package com.pankz;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
-import javax.annotation.Resources;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.stereotype.Component;
 
 
 
-
+@Component
 public class Circle implements Shape {
 	private Point center;
 
@@ -47,3 +46,4 @@ public class Circle implements Shape {
 
 
 }
+
