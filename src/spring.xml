@@ -97,6 +97,15 @@ of inheritence coz we are defining the element for the same member variable i.e 
 
   <context:annotation-config/> 
   <context:component-scan base-package="com.pankz"/>
+  <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+  <property name="basenames">
+  <list>
+  <value>mymessages</value>
+
+  </list>
+  
+  </property>
+  </bean>
   
   
 
