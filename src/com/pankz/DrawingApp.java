@@ -31,7 +31,10 @@ public class DrawingApp {
 	// Circle circle=(Circle)context.getBean("circle");
 		// circle.draw();
 		Shape shape=(Shape)context.getBean("circle");  //coding to interface "Shape"
+		//Here DrawingApp doesn't know whether it is drawing triangle or a circle due to coding to interface.
+		//Can add rectangle classes if needed
 		shape.draw();
+		System.out.println(context.getMessage("greetings",null,"Default Greeting",null));
 	
 	
 
